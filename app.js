@@ -86,4 +86,32 @@ const getCarrito = () => {
   alert("los elementos de su carrito son \n- " + carrito.join("\n- "));
 };
 
-const getProduct = () => {};
+function getProductFromCarrito() {
+  const productToFind = prompt(
+    "que producto deseas ver de tu carrito?"
+  ).toLowerCase();
+  if (carrito.includes(productToFind)) {
+    const producto = carrito.find((prod) => prod == productToFind);
+    alert(producto);
+  } else {
+    alert("no esta ese producto en tu carrito");
+  }
+}
+
+const findProducts = () => {
+  const search = prompt("que producto deseas buscar?").toLocaleLowerCase();
+  const results = productos.filter((producto) => producto.includes(search));
+  alert(results);
+};
+
+const deleteProductfromCarrito = () => {
+  const productToDel = prompt(
+    "que producto deseas borrar del carrito?"
+  ).toLowerCase();
+  if (carrito.includes(productToDel)) {
+    carrito = carrito.filter((prod) => prod != productToDel);
+    alert("Producto eliminado");
+  } else {
+    alert("no se encuentra ese producto en tu carrito");
+  }
+};
