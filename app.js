@@ -99,7 +99,7 @@ function getProductFromCarrito() {
 }
 
 const findProducts = () => {
-  const search = prompt("que producto deseas buscar?").toLocaleLowerCase();
+  const search = prompt("que producto deseas buscar?").toLowerCase();
   const results = productos.filter((producto) => producto.includes(search));
   alert(results);
 };
