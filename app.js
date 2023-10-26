@@ -115,3 +115,50 @@ const deleteProductfromCarrito = () => {
     alert("no se encuentra ese producto en tu carrito");
   }
 };
+
+//JUEGO PIEDRA PAPEL O TIJERAS
+const options = ["piedra", "papel", "tijera"];
+
+function playerMove() {
+  const move = prompt("Piedra, Papel o Tijera?").toLowerCase().trim();
+  // if (move != "piedra" || move != "papel" || move != "tijera") {
+  //   alert("juga bien");
+  // }
+  return move;
+}
+
+function botMove() {
+  let move = Math.floor(Math.random() * 2.99);
+  return options[move];
+}
+
+let game = () => {
+  const bot = botMove();
+  const player = playerMove();
+
+  switch (true) {
+    case player == bot:
+      alert(`El bot jugó ${bot}. Empate`);
+      break;
+    case player == "piedra" && bot == "papel":
+      alert("el bot jugo papel. gana el bot");
+      break;
+    case player == "piedra" && bot == "tijera":
+      alert("el bot jugo tijera. ganaste vos");
+      break;
+
+    case player == "papel" && bot == "piedra":
+      alert("el bot jugo piedra. ganaste vos");
+      break;
+    case player == "papel" && bot == "tijera":
+      alert("el bot jugo tijera. gana el bot");
+      break;
+
+    case player == "tijera" && bot == "papel":
+      alert("el bot jugo papel. ganaste vos");
+      break;
+    case player == "tijera" && bot == "piedra":
+      alert("el bot jugo piedra. gana el bot");
+      break;
+  }
+};
