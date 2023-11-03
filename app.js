@@ -162,3 +162,55 @@ let game = () => {
       break;
   }
 };
+
+//OBJETO
+let cliente = {
+  nombre: "marcos",
+  apellido: "rigo",
+  edad: 33,
+  gustos: ["estudiar", "trabajar", "gimnasia"],
+  mascota: [
+    {
+      nombre: "raymond",
+      edad: 8,
+    },
+    {
+      nombre: "chikita",
+      edad: 9,
+    },
+  ],
+  hijos: null,
+
+  saludar: function () {
+    console.log("hola, que tal?");
+  },
+};
+
+//CLASE
+
+class Persona {
+  constructor(nombre, apellido, edad) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+  }
+  mostrarInfo() {
+    console.log(this.nombre);
+  }
+}
+
+//instanciamos objetos a partir de clase persona
+let personas = [
+  new Persona("marcos", "rigo", 33),
+  new Persona("maria", "santana", 67),
+];
+
+//Herencia de Persona
+class Estudiante extends Persona {
+  constructor(nombre, apellido, edad, legajo) {
+    super(nombre, apellido, edad);
+    this.legajo = legajo;
+  }
+}
+
+const nico = new Estudiante("nicolas", "Fernandez", 31, 35576);
